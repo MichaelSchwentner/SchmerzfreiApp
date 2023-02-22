@@ -22,4 +22,9 @@
         android:name="com.example.schmerzfreiapp.ui.gesundheitstipps.GesundheitstippsFragment"
         android:label="Gesundheitstipps"
         tools:layout="@layout/fragment_gesundheitstipps" />
+    <fragment
+        android:id="@+id/nav_uebungen"
+        android:name="com.example.schmerzfreiapp.ui.uebungen.UebungenFragment"
+        android:label="Uebungen"
+        tools:layout="@layout/fragment_uebungen" />
 </navigation>

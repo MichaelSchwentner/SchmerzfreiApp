@@ -23,7 +23,7 @@
 
     <style name="Theme.SchmerzfreiApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="RobotoTextViewStyle">
-        <item name="fontFamily">@font/saira_semi_condensed_regular</item>
+        <item name="fontFamily">@font/saira_extra_condensed_medium</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>

@@ -7,15 +7,20 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home_icon"
-            android:title="@string/menu_home" />
+            android:title="HOME" />
         <item
             android:id="@+id/nav_hilfsmittel"
             android:icon="@drawable/hilfsmittel_icon"
-            android:title="Hilfsmittel" />
+            android:title="HILFSMITTEL" />
         <item
             android:id="@+id/nav_gesundheitstipps"
             android:icon="@drawable/gesundheitstipps_icon"
-            android:title="Gesundheitstipps"/>
+            android:title="GESUNDHEITSTIPPS"/>
+        <item
+            android:id="@+id/nav_uebungen"
+            android:icon="@drawable/_bungen_icon"
+            android:title="ÜBUNGEN"/>
+
 
     </group>
 </menu>

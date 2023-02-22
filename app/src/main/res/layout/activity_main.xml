@@ -25,5 +25,6 @@
         app:itemIconTint="@color/teal_700"
         app:itemTextColor="#155072"
         app:menu="@menu/activity_main_drawer"
-        app:itemTextAppearance="@style/RobotoTextViewStyle"/>
+        app:itemTextAppearance="@style/RobotoTextViewStyle"
+        app:itemIconSize="46dp"/>
 </androidx.drawerlayout.widget.DrawerLayout>

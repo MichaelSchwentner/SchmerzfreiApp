@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class HilfsmittelViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "This is Hifsmittel Fragment"
     }
     val text: LiveData<String> = _text
 }
