@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_hilfsmittel"
+            android:icon="@drawable/hilfsmittel_icon"
+            android:title="Hilfsmittel" />
+        <item
+            android:id="@+id/nav_gesundheitstipps"
+            android:icon="@drawable/gesundheitstipps_icon"
+            android:title="Gesundheitstipps"/>
+
+    </group>
+</menu>
