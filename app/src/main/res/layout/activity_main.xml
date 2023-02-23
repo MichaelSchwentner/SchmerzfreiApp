@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:layout_gravity="end"
     tools:openDrawer="start">
 
     <include
@@ -25,6 +26,5 @@
         app:itemIconTint="@color/teal_700"
         app:itemTextColor="#155072"
         app:menu="@menu/activity_main_drawer"
-        app:itemTextAppearance="@style/RobotoTextViewStyle"
-        app:itemIconSize="46dp"/>
+        app:itemTextAppearance="@style/RobotoTextViewStyle"/>
 </androidx.drawerlayout.widget.DrawerLayout>
