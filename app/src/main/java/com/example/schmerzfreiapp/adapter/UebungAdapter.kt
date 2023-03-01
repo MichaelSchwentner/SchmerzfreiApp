@@ -1,6 +1,5 @@
 package com.example.schmerzfreiapp.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
 import com.example.schmerzfreiapp.data.model.Uebungen
+import com.example.schmerzfreiapp.ui.uebungen.UebungenFragment
 
-class UebungAdapter (
-    private val context: Context,
+class UebungAdapter(
+    private val context: UebungenFragment,
     private val dataset: List<Uebungen>
 ) : RecyclerView.Adapter<UebungAdapter.ViewHolder>() {
     // IDEE EINES VIEWHOLDERS
@@ -34,7 +34,7 @@ class UebungAdapter (
         val uebungen = dataset[position]
 
         holder.uebungsBild.setImageResource(uebungen.imageResource)
-        holder.uebungsTitel.text = context.getString(uebungen.namevideofile.toInt())
+        holder.uebungsTitel.setText(uebungen.namevideofile)
 
     }
     // damit der LayoutManager weiß wie lang die Liste ist
