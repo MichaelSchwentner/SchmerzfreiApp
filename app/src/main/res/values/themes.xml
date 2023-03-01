@@ -27,4 +27,9 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!-- color used by navigation icon and overflow icon -->
+        <item name="colorOnPrimary">@color/black</item>
+    </style>
 </resources>
