@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         navView.setItemIconTintList(null);
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_hilfsmittel, R.id.nav_gesundheitstipps, R.id.nav_uebungen
+                R.id.nav_home, R.id.nav_hilfsmittel, R.id.nav_gesundheitstipps, R.id.nav_uebungen, R.id.nav_uebungDetail
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

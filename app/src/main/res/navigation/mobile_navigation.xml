@@ -27,4 +27,19 @@
         android:name="com.example.schmerzfreiapp.ui.uebungen.UebungenFragment"
         android:label="Uebungen"
         tools:layout="@layout/fragment_uebungen" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.schmerzfreiapp.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.schmerzfreiapp.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/nav_uebungDetail"
+        android:name="com.example.schmerzfreiapp.ui.UebungDetail.UebungDetailFragment"
+        android:label="UebungDetailFragment"
+        tools:layout="@layout/fragment_uebung_detail"/>
 </navigation>

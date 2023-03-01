@@ -20,6 +20,10 @@
             android:id="@+id/nav_uebungen"
             android:icon="@drawable/_bungen_icon"
             android:title="ÜBUNGEN"/>
+        <item
+            android:id="@+id/nav_uebungDetail"
+            android:icon="@drawable/_bungen_icon"
+            android:title="ÜBUNGENDETAIL"/>
 
 
     </group>
