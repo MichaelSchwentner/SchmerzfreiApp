@@ -11,7 +11,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.schmerzfreiapp.databinding.ActivityMainBinding
 import android.widget.ImageView
-import androidx.navigation.Navigation
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,17 +25,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-
-        //----playbutton
-        val uebungenCardView = findViewById<ImageView>(R.id.uebungen_card_view)
-        uebungenCardView.setOnClickListener {
-            Navigation.findNavController(uebungenCardView).navigate(R.id.nav_uebungen)
-        }
-        //----playbuttonend
-
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+
         //// Passing each menu ID as a set of Ids because each
         //// menu should be considered as top level destinations.
 
@@ -50,6 +42,21 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
+        //----playbutton
+        val navController2 = findNavController(R.id.nav_host_fragment_content_main)
+        val uebungenCardView = findViewById<ImageView>(R.id.uebungen_card_view)
+        uebungenCardView.setOnClickListener {
+            navController2.navigate(R.id.nav_uebungen)
+
+//            val navController = findNavController(R.id.nav_host_fragment_content_main)
+//            val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+//            val inflater = navHostFragment.navController.navInflater
+//            val graph = inflater.inflate(R.navigation.mobile_navigation)
+//            graph.startDestination = R.id.appBarLayout
+//            navController.graph = graph
+        }
+        //----playbuttonend
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -62,4 +69,15 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+//    fun navigateFirstTabWithClearStack() {
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_main) as NavHostFragment
+//        val inflater = navHostFragment.navController.navInflater
+//        val graph = inflater.inflate(R.navigation.nav_graph_main)
+//        graph.startDestination = R.id.nav_graph_tab1
+//
+//        navController.graph = graph
+//    }
+
 }
