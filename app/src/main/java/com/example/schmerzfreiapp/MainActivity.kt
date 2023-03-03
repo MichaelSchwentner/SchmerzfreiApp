@@ -43,22 +43,15 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
-        //----playbutton
+        //----pb
         val uebungenCardView = findViewById<ImageView>(R.id.uebungen_card_view)
         uebungenCardView.setOnClickListener {
             navController.navigate(R.id.nav_uebungen)
-
-//            val navController = findNavController(R.id.nav_host_fragment_content_main)
-//            val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
-//            val inflater = navHostFragment.navController.navInflater
-//            val graph = inflater.inflate(R.navigation.mobile_navigation)
-//            graph.startDestination = R.id.appBarLayout
-//            navController.graph = graph
         }
-        //----playbuttonend
+        //----pbend
 
         val bottomView: BottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_bar)
-// Hook your navigation controller to bottom navigation view
+        // Hook your navigation controller to bottom navigation view
         bottomView.setupWithNavController(navController)
         bottomView.itemIconTintList = null
     }
@@ -73,15 +66,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-//    fun navigateFirstTabWithClearStack() {
-//        val navController = findNavController(R.id.nav_host_fragment_content_main)
-//        val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_main) as NavHostFragment
-//        val inflater = navHostFragment.navController.navInflater
-//        val graph = inflater.inflate(R.navigation.nav_graph_main)
-//        graph.startDestination = R.id.nav_graph_tab1
-//
-//        navController.graph = graph
-//    }
 
 }
