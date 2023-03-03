@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.schmerzfreiapp.databinding.ActivityMainBinding
 import android.widget.ImageView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,10 +44,9 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
         //----playbutton
-        val navController2 = findNavController(R.id.nav_host_fragment_content_main)
         val uebungenCardView = findViewById<ImageView>(R.id.uebungen_card_view)
         uebungenCardView.setOnClickListener {
-            navController2.navigate(R.id.nav_uebungen)
+            navController.navigate(R.id.nav_uebungen)
 
 //            val navController = findNavController(R.id.nav_host_fragment_content_main)
 //            val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
@@ -57,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         }
         //----playbuttonend
 
+        val bottomView: BottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_bar)
+// Hook your navigation controller to bottom navigation view
+        bottomView.setupWithNavController(navController)
+        bottomView.itemIconTintList = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
