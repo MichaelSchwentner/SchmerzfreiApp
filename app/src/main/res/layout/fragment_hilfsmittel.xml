@@ -44,6 +44,69 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="331dp"
+                android:layout_height="86dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/assistant"
+                android:text="Unser höchstes Ziel ist es, Sie persöhnlich in ein schmerzfreies Leben zu begleiten. Oft sind Medikamente oder Operationen gar nicht notwendig! "
+                android:textColor="#1E1D1D"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="332dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/assistant"
+                android:text="Auf diesen Seiten stellen wir Ihnen Informationen zu Verfügung mit denen Sie in der Lage sind, sich selbst bei Schmerzen zu helfen und diese auch vorzubeugen."
+                android:textColor="#1E1D1D"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="328dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/assistant"
+                android:text="Mit folgenden Hilfsmitteln zur Selbstbehandlung, haben Sie die Möglichkeit Ihre Schmerzen sofort und effektiv zu lindern."
+                android:textColor="#1E1D1D"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="297dp"
+                android:layout_height="202dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/faszien_set2_1024x817_1_1"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/assistant"
+                android:text="Faszienrolle und Faszienball"
+                android:textColor="#338F90"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
