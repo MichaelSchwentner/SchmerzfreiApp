@@ -32,8 +32,9 @@ class HomeFragment : Fragment() {
 
         val datasource = Datasource()
         val uebungsbilderListe = datasource.getUebungsbilder()
+        val uebungsbilderHorizontal = datasource.getUebungsbilder2()
         binding.rec2.adapter = HomeAdapter( uebungsbilderListe)
-        binding.imageScrollerHRv.adapter = HometwoAdapter(uebungsbilderListe)
+        binding.imageScrollerHRv.adapter = HometwoAdapter(uebungsbilderHorizontal)
 
 ////        val textView: TextView = binding.textHome
 ////        homeViewModel.text.observe(viewLifecycleOwner) {

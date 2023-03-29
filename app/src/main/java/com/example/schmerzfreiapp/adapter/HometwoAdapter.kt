@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
@@ -34,7 +33,7 @@ class HometwoAdapter(
         val uebungen = dataset[position]
 
         holder.bild.setImageResource(uebungen.imageResource)
-        holder.backgroundiv.setImageResource(uebungen.imageResource)
+       // holder.backgroundiv.setImageResource(uebungen.imageResource)
         //holder.text.setText(uebungen.namevideofile)
 
     }
