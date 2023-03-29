@@ -18,9 +18,9 @@ class Datasource {
     }
     fun getUebungsbilder2(): List<Uebungen> {
         return listOf(
-            Uebungen(R.drawable.group_35554, "WARM UP / COOL DOWN"),
-            Uebungen(R.drawable.group_35558, "BASISÜBUNGEN"),
-            Uebungen(R.drawable.group_35554, "BECKEN UNTERER RÜCKEN")
+            Uebungen(R.drawable.group_35554, "BEINÜBUNG"),
+            Uebungen(R.drawable.group_35558, "SCHULTERÜBUNG"),
+            Uebungen(R.drawable.group_35554, "BEINÜBUNGEN")
 
         )
     }
