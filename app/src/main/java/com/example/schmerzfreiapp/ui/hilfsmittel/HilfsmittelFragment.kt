@@ -1,5 +1,7 @@
 package com.example.schmerzfreiapp.ui.hilfsmittel
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,11 +31,26 @@ class HilfsmittelFragment : Fragment() {
         _binding = FragmentHilfsmittelBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.faszienballImage.setOnClickListener {
+            val url = "https://amzn.to/3uMGef4"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        binding.setImage.setOnClickListener {
+            val url = "https://amzn.to/3MhSn75"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
         val textView: TextView = binding.textHilfsmittel
         hilfsmittelViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
+
     }
 
     override fun onDestroyView() {
