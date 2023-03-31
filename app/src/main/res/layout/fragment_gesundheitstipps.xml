@@ -6,17 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".ui.gesundheitstipps.GesundheitstippsFragment">
 
-    <TextView
-        android:id="@+id/text_gesundheitstipps"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_gesundheitstipps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                android:textColor="#155072"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="15dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="671dp">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="334dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/assistant"
+                        android:text="Um Dein Wohlbefinden zu steigern, musst du Dein Leben nicht von Grund auf umstellen. Manchmal zeigen schon kleine Veränderungen große Wirkung. In diesem Ratgeber findest Du regelmässig interessante Tipps rund um das Thema Gesundheit und Ernährung."
+                        android:textColor="#1E1D1D"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/faszienball_image"
+                        android:layout_width="297dp"
+                        android:layout_height="202dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/faszien_set2_1024x817_1_1"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:srcCompat="@drawable/group_35562" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/assistant"
+                        android:text="Drücker-Set für Light-Osteopressur"
+                        android:textColor="#338F90"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/faszienball_image"
+                        app:layout_constraintTop_toBottomOf="@+id/faszienball_image" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
