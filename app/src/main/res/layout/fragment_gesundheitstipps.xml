@@ -57,7 +57,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="19dp"
-                        android:src="@drawable/faszien_set2_1024x817_1_1"
+                        android:src="@drawable/group_35562"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView5"
