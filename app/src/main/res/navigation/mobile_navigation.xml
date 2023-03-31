@@ -43,4 +43,9 @@
         android:name="com.example.schmerzfreiapp.ui.uebungen.UebungenFragment"
         android:label="fragment_uebungen"
         tools:layout="@layout/fragment_uebungen" />
+    <fragment
+        android:id="@+id/warmupFragment"
+        android:name="com.example.schmerzfreiapp.ui.warmup.WarmupFragment"
+        android:label="fragment_warmup"
+        tools:layout="@layout/fragment_warmup" />
 </navigation>

@@ -24,6 +24,13 @@ class Datasource {
 
         )
     }
+    fun getUebungsbilder3(): List<Uebungen> {
+        return listOf(
+            Uebungen(R.drawable.group_35561, "WARMUP"),
+            Uebungen(R.drawable.group_35561, "COOLDOWN")
+
+        )
+    }
 }
 
 
