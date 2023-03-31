@@ -28,7 +28,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="797dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 app:cardCornerRadius="15dp">
@@ -51,27 +51,29 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/faszienball_image"
-                        android:layout_width="297dp"
-                        android:layout_height="202dp"
+                        android:id="@+id/gesundheitstipps_image"
+                        android:layout_width="315dp"
+                        android:layout_height="220dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
+                        android:layout_marginEnd="19dp"
                         android:src="@drawable/faszien_set2_1024x817_1_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView5"
-                        tools:layout_editor_absoluteX="16dp"
                         tools:srcCompat="@drawable/group_35562" />
 
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/assistant"
-                        android:text="Drücker-Set für Light-Osteopressur"
-                        android:textColor="#338F90"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/faszienball_image"
-                        app:layout_constraintTop_toBottomOf="@+id/faszienball_image" />
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="307dp"
+                        android:layout_height="272dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="27dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/rectangle_2421"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/gesundheitstipps_image" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
