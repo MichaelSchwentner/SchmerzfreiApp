@@ -49,4 +49,11 @@ class WarmupFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+    companion object {
+        const val CLIENT_ID = "3f9f080577e37606e1335bac7935236f513b3995"
+        const val CLIENT_SECRET = "2b/XmwyMC5lw7gsZkCNJ7jdiVlhhs5h+tIbTKPQRjSeItUfZuZNpDOA6KCCVy2AA+uBGjlPQNT8XjutSWSdR3cPzsdYfPywgQl7Uvg+pl54XUd7YIvyYIL0BvX5M1egY"
+        const val CODE_GRANT_REDIRECT_URL = "https://example.com"
+        const val REQUEST_CODE = "12345"
+        const val STAFF_PICKS_URI = "/channels/927/videos"
+    }
 }
