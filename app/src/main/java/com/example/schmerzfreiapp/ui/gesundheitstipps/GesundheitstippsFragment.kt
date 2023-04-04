@@ -28,6 +28,7 @@ class GesundheitstippsFragment : Fragment() {
         _binding = FragmentGesundheitstippsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
         val textView: TextView = binding.textGesundheitstipps
         gesundheitstippsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
