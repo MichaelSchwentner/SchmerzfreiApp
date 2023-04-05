@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.schmerzfreiapp.adapter.WarmupAdapter
 import com.example.schmerzfreiapp.data.model.Datasource
+import com.example.schmerzfreiapp.data.remote.VimeoApi
 import com.example.schmerzfreiapp.databinding.FragmentWarmupBinding
 import com.example.schmerzfreiapp.ui.warmup.WarmupViewModel
+import kotlinx.coroutines.launch
 
 class WarmupFragment : Fragment() {
 
@@ -27,6 +30,7 @@ class WarmupFragment : Fragment() {
     ): View {
         val warmupViewModel =
             ViewModelProvider(this).get(WarmupViewModel::class.java)
+
 
         _binding = FragmentWarmupBinding.inflate(inflater, container, false)
 
@@ -56,4 +60,6 @@ class WarmupFragment : Fragment() {
         const val REQUEST_CODE = "12345"
         const val STAFF_PICKS_URI = "/channels/927/videos"
     }
+
+
 }
