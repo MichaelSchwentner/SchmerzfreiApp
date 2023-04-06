@@ -31,7 +31,6 @@ class WarmupFragment : Fragment() {
         val warmupViewModel =
             ViewModelProvider(this).get(WarmupViewModel::class.java)
 
-
         _binding = FragmentWarmupBinding.inflate(inflater, container, false)
 
         val datasource = Datasource()

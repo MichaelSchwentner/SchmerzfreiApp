@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.schmerzfreiapp.adapter.HomeAdapter
 import com.example.schmerzfreiapp.adapter.HometwoAdapter
 import com.example.schmerzfreiapp.data.model.Datasource
 import com.example.schmerzfreiapp.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
+import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
@@ -36,6 +39,24 @@ class HomeFragment : Fragment() {
         binding.rec2.adapter = HomeAdapter( uebungsbilderListe)
         binding.imageScrollerHRv.adapter = HometwoAdapter(uebungsbilderHorizontal)
 
+        var videoURL: String = "540807840"
+
+//        binding.rec2.setOnClickListener {
+//            println("loading Data")
+//            lifecycleScope.launch {
+//                val response: Response<User> = VimeoApi.retrofitService.getVideoInfo("https://api.vimeo.com/videos/" + videoURL)
+//                if (response.isSuccessful) {
+//                    println(response.raw())
+//                    val user: User? = response.body()
+//                    println(user?.name)
+//                    binding.textviewFirst.text = user?.name
+//                }else{
+//                    println("Someting went wrong")
+//                    println(response.raw())
+//                }
+//            }
+//
+//        }
 ////        val textView: TextView = binding.textHome
 ////        homeViewModel.text.observe(viewLifecycleOwner) {
 ////            textView.text = it

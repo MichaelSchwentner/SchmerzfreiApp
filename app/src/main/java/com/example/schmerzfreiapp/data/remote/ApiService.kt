@@ -1,5 +1,6 @@
 package com.example.schmerzfreiapp.data.remote
 
+import com.example.schmerzfreiapp.data.model.ApiResponseData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -21,9 +22,11 @@ private val retrofit =
         .build()
 
 interface VimeoApiService {
-    @GET("me")
-    suspend fun getUserInfo(): Response<User>
+    @GET("users/80963807/videos")
+    suspend fun getUserInfo(): Response<ApiResponseData>
+
 }
+
 
 private fun getOkHttpClient(): OkHttpClient {
     val clientBuilder = OkHttpClient.Builder()
