@@ -42,10 +42,18 @@
         android:id="@+id/nav_uebungen"
         android:name="com.example.schmerzfreiapp.ui.uebungen.UebungenFragment"
         android:label="fragment_uebungen"
-        tools:layout="@layout/fragment_uebungen" />
+        tools:layout="@layout/fragment_uebungen" >
+        <action
+            android:id="@+id/action_nav_uebungen_to_warmupFragment"
+            app:destination="@id/warmupFragment" />
+    </fragment>
     <fragment
         android:id="@+id/warmupFragment"
         android:name="com.example.schmerzfreiapp.ui.warmup.WarmupFragment"
         android:label="fragment_warmup"
-        tools:layout="@layout/fragment_warmup" />
+        tools:layout="@layout/fragment_warmup" >
+        <argument
+            android:name="titel"
+            app:argType="string" />
+    </fragment>
 </navigation>

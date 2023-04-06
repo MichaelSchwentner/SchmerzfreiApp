@@ -32,7 +32,9 @@ class WarmupFragment : Fragment() {
             ViewModelProvider(this).get(WarmupViewModel::class.java)
 
         _binding = FragmentWarmupBinding.inflate(inflater, container, false)
+        val titel = arguments?.getString("titel")
 
+        binding.titelUebungen1Text.text = titel
         val datasource = Datasource()
         val uebungsbilderListe = datasource.getUebungsbilder3()
         binding.uebungen3Recycler.adapter = WarmupAdapter(this, uebungsbilderListe)
