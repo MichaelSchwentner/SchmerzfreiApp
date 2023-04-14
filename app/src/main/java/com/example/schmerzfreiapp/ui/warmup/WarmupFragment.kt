@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.example.schmerzfreiapp.MainViewModel
 import com.example.schmerzfreiapp.adapter.WarmupAdapter
 import com.example.schmerzfreiapp.data.model.Datasource
 import com.example.schmerzfreiapp.data.remote.VimeoApi
@@ -18,6 +20,7 @@ import kotlinx.coroutines.launch
 class WarmupFragment : Fragment() {
 
     private var _binding: FragmentWarmupBinding? = null
+    private val viewModel: MainViewModel by viewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,7 +40,7 @@ class WarmupFragment : Fragment() {
         binding.titelUebungen1Text.text = titel
         val datasource = Datasource()
         val uebungsbilderListe = datasource.getUebungsbilder3()
-        binding.uebungen3Recycler.adapter = WarmupAdapter(this, uebungsbilderListe)
+        binding.uebungen3Recycler.adapter = WarmupAdapter(this, viewModel.videos.value!!.data)
 
         val root: View = binding.root
 
@@ -47,6 +50,19 @@ class WarmupFragment : Fragment() {
             textView.text = it
             textView2.text = it
         }
+
+        viewModel.currentFolder.observe(viewLifecycleOwner){
+            viewModel.getVideo()
+
+            binding.uebungen3Recycler.adapter = WarmupAdapter(this, viewModel.videos.value!!.data)
+        }
+
+        for (folder in viewModel.folder.value!!.data){
+            if (folder.name == titel){
+                viewModel.currentFolder.value = folder.uri.substringAfterLast("/")
+            }
+        }
+
         return root
     }
 

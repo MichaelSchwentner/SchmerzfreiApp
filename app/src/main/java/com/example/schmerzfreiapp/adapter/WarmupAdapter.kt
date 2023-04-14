@@ -8,12 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
 import com.example.schmerzfreiapp.data.model.Uebungen
+import com.example.schmerzfreiapp.data.model.VideoData
 import com.example.schmerzfreiapp.ui.uebungen.UebungenFragment
 import com.example.schmerzfreiapp.ui.warmup.WarmupFragment
 
 class WarmupAdapter(
     private val context: WarmupFragment,
-    private val dataset: List<Uebungen>
+    private val dataset: List<VideoData>
 ) : RecyclerView.Adapter<WarmupAdapter.ViewHolder>() {
     // IDEE EINES VIEWHOLDERS
     // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
@@ -36,8 +37,10 @@ class WarmupAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val uebungen = dataset[position]
 
-        holder.uebungsBild.setImageResource(uebungen.imageResource)
-        holder.uebungsTitel.setText(uebungen.namevideofile)
+        holder.uebungsBild.setImageResource(R.drawable.group_35561)
+        holder.uebungsTitel.setText(uebungen.name)
+
+        //TODO: onclick Video soll abgespielt werden
 
     }
     // damit der LayoutManager weiß wie lang die Liste ist
