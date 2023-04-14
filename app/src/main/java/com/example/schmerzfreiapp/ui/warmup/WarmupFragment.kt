@@ -40,7 +40,8 @@ class WarmupFragment : Fragment() {
         binding.titelUebungen1Text.text = titel
         val datasource = Datasource()
         val uebungsbilderListe = datasource.getUebungsbilder3()
-        binding.uebungen3Recycler.adapter = WarmupAdapter(this, viewModel.videos.value!!.data)
+
+        //binding.uebungen3Recycler.adapter = WarmupAdapter(this, viewModel.videos.value!!.data)
 
         val root: View = binding.root
 
