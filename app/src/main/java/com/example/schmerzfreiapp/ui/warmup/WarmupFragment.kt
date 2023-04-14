@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -20,7 +21,7 @@ import kotlinx.coroutines.launch
 class WarmupFragment : Fragment() {
 
     private var _binding: FragmentWarmupBinding? = null
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -52,17 +53,16 @@ class WarmupFragment : Fragment() {
             textView2.text = it
         }
 
-        viewModel.currentFolder.observe(viewLifecycleOwner){
-            viewModel.getVideo()
-
+        viewModel.videos.observe(viewLifecycleOwner){
             binding.uebungen3Recycler.adapter = WarmupAdapter(this, viewModel.videos.value!!.data)
         }
-
+        println(viewModel.folder.value)
         for (folder in viewModel.folder.value!!.data){
             if (folder.name == titel){
-                viewModel.currentFolder.value = folder.uri.substringAfterLast("/")
+                viewModel.setCurrentFolder(folder.uri.substringAfterLast("/"))
             }
         }
+        viewModel.getVideo()
 
         return root
     }

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
 import com.example.schmerzfreiapp.data.model.Uebungen
@@ -41,6 +42,10 @@ class WarmupAdapter(
         holder.uebungsTitel.setText(uebungen.name)
 
         //TODO: onclick Video soll abgespielt werden
+        holder.uebungsBild.setOnClickListener {
+            Navigation.findNavController(holder.itemView)
+                .navigate(WarmupFragmentDirections.actionWarmupFragmentToNavUebungDetail(uebungen.link))
+        }
 
     }
     // damit der LayoutManager weiß wie lang die Liste ist
