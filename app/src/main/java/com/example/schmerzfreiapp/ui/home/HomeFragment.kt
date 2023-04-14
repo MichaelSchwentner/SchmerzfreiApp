@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.example.schmerzfreiapp.MainViewModel
 import com.example.schmerzfreiapp.adapter.HomeAdapter
 import com.example.schmerzfreiapp.adapter.HometwoAdapter
 import com.example.schmerzfreiapp.data.model.Datasource
@@ -17,6 +19,7 @@ import retrofit2.Response
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private val viewModel: MainViewModel by viewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -40,6 +43,12 @@ class HomeFragment : Fragment() {
         binding.imageScrollerHRv.adapter = HometwoAdapter(uebungsbilderHorizontal)
 
         var videoURL: String = "540807840"
+        viewModel.getFolder()
+        viewModel.folder.observe(viewLifecycleOwner){
+            println(viewModel.folder.value)
+        }
+
+
 
 //        binding.rec2.setOnClickListener {
 //            println("loading Data")
