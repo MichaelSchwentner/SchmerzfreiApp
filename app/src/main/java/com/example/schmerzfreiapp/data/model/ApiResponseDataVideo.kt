@@ -1,6 +1,5 @@
 package com.example.schmerzfreiapp.data.model
 
-data class ApiResponseData(
+data class ApiResponseDataVideo(
     val data: List<VideoData>,
-
 )

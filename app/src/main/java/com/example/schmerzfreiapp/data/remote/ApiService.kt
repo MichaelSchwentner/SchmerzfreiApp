@@ -1,6 +1,8 @@
 package com.example.schmerzfreiapp.data.remote
 
-import com.example.schmerzfreiapp.data.model.ApiResponseData
+import com.example.schmerzfreiapp.data.model.ApiResponseDataFolder
+import com.example.schmerzfreiapp.data.model.ApiResponseDataVideo
+import com.example.schmerzfreiapp.data.model.FolderData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -8,6 +10,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 const val BASE_URL_VIMEO: String = "https://api.vimeo.com/"
 const val ACCESS_TOKEN = "c5fbf173a4a2b3cd77cd9f3f0fc0e333"
@@ -22,11 +25,14 @@ private val retrofit =
         .build()
 
 interface VimeoApiService {
-    @GET("users/80963807/videos")
-    suspend fun getUserInfo(): Response<ApiResponseData>
+    @GET("/users/80963807/projects/{project_id}/videos")
+    suspend fun getAllVideosFromFolder(@Path("project_id") project_id: String): ApiResponseDataVideo
+
+
+    @GET("/users/80963807/projects")
+    suspend fun getAllFoldersFromUser(): ApiResponseDataFolder
 
 }
-
 
 private fun getOkHttpClient(): OkHttpClient {
     val clientBuilder = OkHttpClient.Builder()
