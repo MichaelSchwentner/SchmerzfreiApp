@@ -12,6 +12,7 @@ import com.example.schmerzfreiapp.data.model.Uebungen
 import com.example.schmerzfreiapp.data.model.VideoData
 import com.example.schmerzfreiapp.ui.uebungen.UebungenFragment
 import com.example.schmerzfreiapp.ui.warmup.WarmupFragment
+import com.example.schmerzfreiapp.ui.warmup.WarmupFragmentDirections
 
 class WarmupAdapter(
     private val context: WarmupFragment,

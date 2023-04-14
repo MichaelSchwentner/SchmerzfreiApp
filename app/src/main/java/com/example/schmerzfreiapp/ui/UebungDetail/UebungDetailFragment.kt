@@ -8,6 +8,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.schmerzfreiapp.databinding.FragmentUebungDetailBinding
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.source.hls.HlsMediaSource
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 
 class UebungDetailFragment : Fragment() {
 
@@ -22,6 +26,7 @@ class UebungDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val uebungDetailViewModel =
             ViewModelProvider(this).get(UebungDetailViewModel::class.java)
 
@@ -32,6 +37,22 @@ class UebungDetailFragment : Fragment() {
         uebungDetailViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+        val uri = arguments?.getString("uri")
+        val playerView = binding.videoPlayer
+        val videoUri = MediaItem.fromUri(uri!!)
+
+        val dataSourceFactory = DefaultHttpDataSource.Factory()
+        val mediaSource = HlsMediaSource.Factory(dataSourceFactory).createMediaSource(videoUri)
+
+        val player = ExoPlayer.Builder(requireContext()).build()
+        player.setMediaSource(mediaSource)
+
+// Attach player to your view or surface
+        playerView.player = player
+
+// Start playback when ready
+        player.playWhenReady = true
+
         return root
     }
 
