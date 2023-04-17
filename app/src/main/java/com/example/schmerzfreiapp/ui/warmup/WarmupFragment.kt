@@ -47,10 +47,10 @@ class WarmupFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.titelUebungen1Text
-        val textView2: TextView = binding.titelUebungen1Text
+        //val textView2: TextView = binding.titelUebungen1Text
         warmupViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-            textView2.text = it
+         //   textView2.text = it
         }
 
         viewModel.videos.observe(viewLifecycleOwner){

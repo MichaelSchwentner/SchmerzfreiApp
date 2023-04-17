@@ -16,7 +16,6 @@ import com.example.schmerzfreiapp.ui.uebungen.UebungenFragment
 import com.example.schmerzfreiapp.ui.uebungen.UebungenFragmentDirections
 
 class UebungAdapter(
-    private val context: UebungenFragment,
     private val dataset: List<Uebungen>
 ) : RecyclerView.Adapter<UebungAdapter.ViewHolder>() {
     // IDEE EINES VIEWHOLDERS
@@ -47,6 +46,7 @@ class UebungAdapter(
         holder.card.setOnClickListener {
             holder.uebungsTitel.text
             Navigation.findNavController(holder.itemView).navigate(UebungenFragmentDirections.actionNavUebungenToWarmupFragment(holder.uebungsTitel.text.toString()))
+
         }
 
     }

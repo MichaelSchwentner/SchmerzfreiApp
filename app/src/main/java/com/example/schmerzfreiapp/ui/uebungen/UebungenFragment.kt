@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -17,7 +18,7 @@ import com.example.schmerzfreiapp.databinding.FragmentUebungenBinding
 class UebungenFragment : Fragment() {
 
     private var _binding: FragmentUebungenBinding? = null
-    private val viewModel: UebungenViewModel by viewModels()
+    private val viewModel: UebungenViewModel by activityViewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,21 +29,21 @@ class UebungenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val uebungenViewModel =
-            ViewModelProvider(this).get(UebungenViewModel::class.java)
+        //val uebungenViewModel =
+         //   ViewModelProvider(this).get(UebungenViewModel::class.java)
 
         _binding = FragmentUebungenBinding.inflate(inflater, container, false)
 
 
         viewModel.categories.observe(viewLifecycleOwner){
-            binding.uebungenRecycler.adapter = UebungAdapter(this, viewModel.categories.value!!)
+            binding.uebungenRecycler.adapter = UebungAdapter(viewModel.categories.value!!)
         }
 
 
         val root: View = binding.root
 
-        val textView: TextView = binding.titelUebungen1Text
-        val textView2: TextView = binding.titelUebungen1Text
+        //val textView: TextView = binding.titelUebungen1Text
+        //val textView2: TextView = binding.titelUebungen1Text
 
         return root
     }
