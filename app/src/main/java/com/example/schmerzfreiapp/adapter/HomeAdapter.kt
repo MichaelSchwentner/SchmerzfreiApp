@@ -6,9 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
 import com.example.schmerzfreiapp.data.model.Uebungen
+import com.example.schmerzfreiapp.ui.home.HomeFragmentDirections
+import com.example.schmerzfreiapp.ui.uebungen.UebungenFragmentDirections
 
 class HomeAdapter(
     private val dataset: List<Uebungen>
@@ -35,6 +38,12 @@ class HomeAdapter(
 
         holder.bild.setImageResource(uebungen.imageResource)
         holder.text.setText(uebungen.namevideofile)
+
+        holder.card.setOnClickListener {
+            holder.text.text
+            Navigation.findNavController(holder.itemView).navigate(HomeFragmentDirections.actionNavHomeToWarmupFragment2(holder.text.text.toString()))
+        }
+
 
     }
     // damit der LayoutManager weiß wie lang die Liste ist
