@@ -1,6 +1,6 @@
 Schmerzfrei App
 
-Die Schmerzfrei App ist eine mobile Anwendung, die es Nutzern ermöglicht, Videos anzuschauen, in denen Übungen gezeigt werden, die helfen, Schmerzen in verschiedenen Körperbereichen zu lindern. Die App verfügt über 5 funktionsfähige Bildschirme und eine Navigation über Navgraph. Außerdem enthält sie eine Recyclerview-Funktion und einen API-Call, um die Übungsvideos von einem externen Server zu laden.
+Die Schmerzfrei App ist eine mobile Anwendung, die es Nutzern ermöglicht, Videos anzuschauen, in denen Übungen gezeigt werden, die helfen, Schmerzen in verschiedenen Körperbereichen zu lindern b.z.w zu bekämpfen. Die App verfügt über 5 funktionsfähige Bildschirme und eine Navigation über Navgraph. Außerdem enthält sie eine Recyclerview-Funktion und einen API-Call, um die Übungsvideos von einem externen Server zu laden.
 
 Features
 
