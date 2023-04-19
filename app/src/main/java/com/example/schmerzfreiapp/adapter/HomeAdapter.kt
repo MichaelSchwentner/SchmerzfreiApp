@@ -1,20 +1,28 @@
 package com.example.schmerzfreiapp.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
 import com.example.schmerzfreiapp.data.model.Uebungen
+import com.example.schmerzfreiapp.ui.home.HomeFragment
 import com.example.schmerzfreiapp.ui.home.HomeFragmentDirections
 import com.example.schmerzfreiapp.ui.uebungen.UebungenFragmentDirections
+import com.example.schmerzfreiapp.ui.warmup.WarmupFragment
+
 
 class HomeAdapter(
-    private val dataset: List<Uebungen>
+
+    private val dataset: List<Uebungen>,
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     // IDEE EINES VIEWHOLDERS
     // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
@@ -22,6 +30,7 @@ class HomeAdapter(
         val bild = view.findViewById<ImageView>(R.id.imageView6)
         val text = view.findViewById<TextView>(R.id.textView11)
         val card = view.findViewById<CardView>(R.id.card2)
+        val gesundheitstipps = view.findViewById<CardView>(R.id.mv_card)
     }
     // ERSTELLEN DES VIEWHOLDERS
     // hier werden neue ViewHolder erstellt
@@ -43,7 +52,6 @@ class HomeAdapter(
             holder.text.text
             Navigation.findNavController(holder.itemView).navigate(HomeFragmentDirections.actionNavHomeToWarmupFragment2(holder.text.text.toString()))
         }
-
 
     }
     // damit der LayoutManager weiß wie lang die Liste ist
