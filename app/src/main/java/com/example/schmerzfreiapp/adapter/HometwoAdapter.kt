@@ -42,7 +42,7 @@ class HometwoAdapter(
 
         holder.gesundheitstipps.setOnClickListener {
 
-            Toast.makeText(context, "Element ${position+1} wurde geklickt!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "In Bearbeitung!", Toast.LENGTH_SHORT).show()
         }
 
     }
