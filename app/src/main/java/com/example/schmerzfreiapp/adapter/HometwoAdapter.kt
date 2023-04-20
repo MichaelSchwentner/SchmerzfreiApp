@@ -1,16 +1,19 @@
 package com.example.schmerzfreiapp.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schmerzfreiapp.R
 import com.example.schmerzfreiapp.data.model.Uebungen
 
 class HometwoAdapter(
-    private val dataset: List<Uebungen>
+    private val dataset: List<Uebungen>,
+    private val context: Context
 ) : RecyclerView.Adapter<HometwoAdapter.ViewHolder>() {
     // IDEE EINES VIEWHOLDERS
     // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
@@ -18,6 +21,7 @@ class HometwoAdapter(
         val bild = view.findViewById<ImageView>(R.id.imageView5)
         val backgroundiv = view.findViewById<ImageView>(R.id.backgroundImage_iv)
         val card2 = view.findViewById<CardView>(R.id.mv_card)
+        val gesundheitstipps = view.findViewById<CardView>(R.id.mv_card)
     }
     // ERSTELLEN DES VIEWHOLDERS
     // hier werden neue ViewHolder erstellt
@@ -35,6 +39,11 @@ class HometwoAdapter(
         holder.bild.setImageResource(uebungen.imageResource)
        // holder.backgroundiv.setImageResource(uebungen.imageResource)
         //holder.text.setText(uebungen.namevideofile)
+
+        holder.gesundheitstipps.setOnClickListener {
+
+            Toast.makeText(context, "Element ${position+1} wurde geklickt!", Toast.LENGTH_SHORT).show()
+        }
 
     }
     // damit der LayoutManager weiß wie lang die Liste ist

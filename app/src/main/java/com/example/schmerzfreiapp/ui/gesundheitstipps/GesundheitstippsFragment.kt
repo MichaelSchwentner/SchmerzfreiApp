@@ -36,7 +36,7 @@ class GesundheitstippsFragment : Fragment() {
         }
 
         binding.textView12.setOnClickListener {
-            Toast.makeText(context, "Einleitungsvideo ist noch in Bearbeitung...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "In Bearbeitung...", Toast.LENGTH_SHORT).show()
         }
 
         val textView: TextView = binding.textGesundheitstipps

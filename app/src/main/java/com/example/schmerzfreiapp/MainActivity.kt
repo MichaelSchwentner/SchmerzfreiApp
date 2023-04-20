@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private lateinit var uebungenCardView: ImageView
+    //private lateinit var uebungenCardView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         uebungenCardView.setOnClickListener {
             navController.navigate(R.id.nav_uebungen)
         }
+
         //----pbend
 
         val bottomView: BottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_bar)

@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
         val uebungsbilderListe = datasource.getUebungsbilder()
         val uebungsbilderHorizontal = datasource.getUebungsbilder2()
         binding.rec2.adapter = HomeAdapter( uebungsbilderListe)
-        binding.imageScrollerHRv.adapter = HometwoAdapter(uebungsbilderHorizontal)
+        binding.imageScrollerHRv.adapter = HometwoAdapter(uebungsbilderHorizontal, requireContext())
 
         var videoURL: String = "540807840"
         viewModel.getFolder()
